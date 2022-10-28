@@ -6,6 +6,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -18,11 +20,11 @@ public class setup {
 	 
 	 
 	 public WebDriver launchBrowser() {
-		 WebDriverManager.chromedriver().setup();
-		 driver = new ChromeDriver();
+		 WebDriverManager.edgedriver().setup();
+		 driver = new EdgeDriver();
 		 driver.manage().window().maximize();
 		 driver.manage().deleteAllCookies();
-		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		 return driver;
 	 }
 	 
